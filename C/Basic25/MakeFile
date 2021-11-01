@@ -1,0 +1,29 @@
+CC = gcc
+
+SRC = ./src
+SRCSET = $(SRC)/set
+OBJ = ./obj
+BIN = ./bin
+LIB = ./lib
+
+OBJS = $(OBJ)/main.o $(OBJ)/set.o $(OBJ)/set_main.o
+
+TARGET = Basic25
+
+all : $(TARGET)
+
+$(TARGET) : $(OBJS)
+					$(CC) $(OBJS) -o $(BIN)/$(TARGET)
+
+$(OBJ)/main.o : $(SRC)/main.c
+					$(CC) -w -c $(SRC)/main.c && move main.o $(OBJ)
+
+$(OBJ)/set.o : $(SRCSET)/set.c
+					$(CC) -w -c $(SRCSET)/set.c && move set.o $(OBJ)
+
+$(OBJ)/set_main.o : $(SRCSET)/set_main.c
+					$(CC) -w -c $(SRCSET)/set_main.c && move set_main.o $(OBJ)
+
+clean :
+					del $(OBJ)/*.o
+					del $(BIN)/*.exe
