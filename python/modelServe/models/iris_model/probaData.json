@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "probabilities",
+  "type": "object",
+  "properties": {
+    "probabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "setosa": {
+            "type": "number"
+          },
+          "versicolor": {
+            "type": "number"
+          },
+          "virginica": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "setosa",
+          "versicolor",
+          "virginica"
+        ]
+      }
+    }
+  },
+  "required": [
+    "probabilities"
+  ]
+}

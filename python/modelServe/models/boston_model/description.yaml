@@ -1,0 +1,31 @@
+apiVersion: ai.obzen.com/v1alpha1
+kind: MLPredictor
+metadata:
+  name: boston-predictor-001
+spec:
+  module:
+    name: estimator
+    file: estimator.py
+    engine:
+      type: python
+      version: v3.8
+    functions:
+      - name: predict
+    prerequisites:
+      - name: python-packages
+        type: pypi
+        file: requirements.txt
+  data_schemas:
+    - type: JsonSchema
+      name: inputData
+      file: inputData.json
+    - type: JsonSchema
+      name: outputData
+      file: outputData.json
+  executions:
+    - name: get_estimate
+      module: estimator
+      function: predict
+      input: inputData
+      output: outputData
+

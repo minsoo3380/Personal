@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "title": "prediction",
+  "type": "object",
+  "properties": {
+    "prediction": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Species": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "Species"
+        ]
+      }
+    }
+  },
+  "required": [
+    "prediction"
+  ]
+}

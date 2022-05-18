@@ -1,0 +1,43 @@
+apiVersion: ai.obzen.com/v1alpha1
+kind: MLPredictor
+metadata:
+  name: iris-predictor-001
+spec:
+  module:
+    name: predictor
+    file: predictor.py
+    engine:
+      type: python
+      version: v3.8
+    functions:
+      - name: predict
+      - name: predict_proba
+    prerequisites:
+      - name: python-packages
+        type: pypi
+        file: requirements.txt
+      - name: apt-packages
+        type: apt
+        file: apt-pkgs.txt
+  data_schemas:
+    - type: JsonSchema
+      name: inputData
+      file: inputData.json
+    - type: JsonSchema
+      name: outputData
+      file: outputData.json
+    - type: JsonSchema
+      name: probaData
+      file: probaData.json
+  executions:
+    - name: get_predict
+      module: predictor
+      function: predict
+      input: inputData
+      output: outputData
+    - name: get_probs
+      module: predictor
+      function: predict_proba
+      input: inputData
+      output: probaData
+

@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "title": "data",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "SepalLength": {
+            "type": "number"
+          },
+          "SepalWidth": {
+            "type": "number"
+          },
+          "PetalLength": {
+            "type": "number"
+          },
+          "PetalWidth": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "PetalLength",
+          "PetalWidth",
+          "SepalLength",
+          "SepalWidth"
+        ]
+      }
+    }
+  },
+  "required": [
+    "data"
+  ]
+}

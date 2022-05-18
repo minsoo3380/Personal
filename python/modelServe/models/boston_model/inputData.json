@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "data",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "CRIM": {
+            "type": "number"
+          },
+          "ZN": {
+            "type": "number"
+          },
+          "INDUS": {
+            "type": "number"
+          },
+          "CHAS": {
+            "type": "number"
+          },
+          "NOX": {
+            "type": "number"
+          },
+          "RM": {
+            "type": "number"
+          },
+          "AGE": {
+            "type": "number"
+          },
+          "DIS": {
+            "type": "number"
+          },
+          "RAD": {
+            "type": "number"
+          },
+          "TAX": {
+            "type": "number"
+          },
+          "PTRATIO": {
+            "type": "number"
+          },
+          "B": {
+            "type": "number"
+          },
+          "LSTAT": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "AGE",
+          "B",
+          "CHAS",
+          "CRIM",
+          "DIS",
+          "INDUS",
+          "LSTAT",
+          "NOX",
+          "PTRATIO",
+          "RAD",
+          "RM",
+          "TAX",
+          "ZN"
+        ]
+      }
+    }
+  },
+  "required": [
+    "data"
+  ]
+}
